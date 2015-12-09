@@ -34,6 +34,7 @@ update_certs() {
         echo "Creating/renewal $base_domain certificates... (${hosts_array_expanded[*]})"
         /usr/local/bin/simp_le \
              $params_d_str \
+             -f account_key.json \
              -f fullchain.pem -f key.pem \
              --email "${!email_varname}" \
              --server=https://acme-v01.api.letsencrypt.org/directory \
